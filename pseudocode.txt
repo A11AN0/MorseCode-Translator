@@ -1,0 +1,2 @@
+1. Will make a class that returns a morse code, per letter input
+    - First method within this class should validate whether or not a single letter/number has been inputted by returning true/false.
