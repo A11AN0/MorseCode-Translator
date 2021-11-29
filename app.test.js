@@ -1,4 +1,4 @@
-import { singleCharacterConverter } from "./app.js";
+import { singleCharacterConverter, translator } from "./app.js";
 
 describe("Tests for the singleCharacterConverter class", () => {
   describe("isLetterOrNumber Validator Test", () => {
@@ -39,9 +39,9 @@ describe("Tests for the singleCharacterConverter class", () => {
       expect(input.getSingleMorseCode).toBe("..--..");
     });
 
-    test("Multiple number/letter inputs should return undefined", () => {
+    test("Multiple number/letter inputs should return blank string", () => {
       const input = new singleCharacterConverter({});
-      expect(input.getSingleMorseCode).toBe(undefined);
+      expect(input.getSingleMorseCode).toBe("");
     });
   });
 
@@ -68,14 +68,43 @@ describe("Tests for the singleCharacterConverter class", () => {
       expect(input.getSingleLetterOrNumber).toBe("!");
     });
 
-    test("Multiple/incorrect morse code inputs should return undefined", () => {
+    test("Multiple/incorrect morse code inputs should return blank string", () => {
       const input = new singleCharacterConverter(".--.-..");
-      expect(input.getSingleLetterOrNumber).toBe(undefined);
+      expect(input.getSingleLetterOrNumber).toBe("");
     });
 
-    test("Inputs which aren't morse code, should return undefined", () => {
+    test("Inputs which aren't morse code, should return blank string", () => {
       const input = new singleCharacterConverter(420);
-      expect(input.getSingleLetterOrNumber).toBe(undefined);
+      expect(input.getSingleLetterOrNumber).toBe("");
+    });
+  });
+});
+
+describe("Tests for the translator class", () => {
+  describe("getToMorse Return Test", () => {
+    test("A sentence of valid letters/numbers and punctuation should return a morse equivalent", () => {
+      const input = new translator(
+        "A pr0found silence has entered the chat..."
+      );
+      expect(input.getToMorse).toBe(
+        ".- / .--. .-. ----- ..-. --- ..- -. -.. / ... .. .-.. . -. -.-. . / .... .- ... / . -. - . .-. . -.. / - .... . / -.-. .... .- - .-.-.- .-.-.- .-.-.-"
+      );
+    });
+  });
+
+  describe("getToMorse Return Test", () => {
+    test("A sentence of invalid values/punctuation should return a blank string", () => {
+      const input = new translator("[][][]+[][][]#");
+      expect(input.getToMorse).toBe("");
+    });
+  });
+
+  describe("getToMorse Return Test", () => {
+    test("Should ignore the invalid characters and return the morse equivalent string for valid characters", () => {
+      const input = new translator("[][][]pr0found[][][]# silence");
+      expect(input.getToMorse).toBe(
+        ".--. .-. ----- ..-. --- ..- -. -.. / ... .. .-.. . -. -.-. ."
+      );
     });
   });
 });
