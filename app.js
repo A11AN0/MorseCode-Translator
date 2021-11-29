@@ -43,6 +43,7 @@ export class singleCharacterConverter {
       "?": "..--..",
       "!": "-.-.--",
       ",": ".-.-.-",
+      " ": "/",
     };
   }
 
@@ -58,6 +59,7 @@ export class singleCharacterConverter {
   get getSingleMorseCode() {
     const input = this.character;
     if (this.isLetterOrNumber) return this.morseCodeDictionary[input];
+    return "";
   }
 
   /*This getter will now check to see if the morse code input is valid, and can be converted*/
@@ -73,5 +75,30 @@ export class singleCharacterConverter {
     const valueArray = Object.values(this.morseCodeDictionary);
     const keyIndex = valueArray.indexOf(input);
     if (this.isMorseCode) return keyArray[keyIndex];
+    return "";
+  }
+}
+
+/* A translator class which will convert a sentence of valid symbols/morse code  */
+export class translator {
+  constructor(
+    sentence /*Will read from the input box each time and keep updating */
+  ) {
+    this.sentence = sentence;
+  }
+
+  get getToMorse() {
+    const alphabetArray = this.sentence.split("");
+    return alphabetArray
+      .map((letter) => new singleCharacterConverter(letter).getSingleMorseCode)
+      .filter((entry) => entry.trim() != "")
+      .join(" ");
+  }
+
+  get getToAlphabet() {
+    const morseArray = this.sentence.split(" ");
+    return morseArray
+      .map((code) => new singleCharacterConverter(code).getSingleLetterOrNumber)
+      .join("");
   }
 }
