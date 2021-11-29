@@ -1,5 +1,5 @@
 /*Will simply convert a single letter/number to morse code, OR vice versa, iT cAn dO bOtH */
-export class singleCharacterConverter {
+class singleCharacterConverter {
   constructor(character) {
     this.character = character.toString().toLowerCase();
     this.morseCodeDictionary = {
@@ -79,8 +79,9 @@ export class singleCharacterConverter {
   }
 }
 
-/* A translator class which will convert a sentence of valid symbols/morse code  */
-export class translator {
+/* A translator class which will convert a sentence of valid symbols/morse code
+To run jest tests, just put export in front of the classess and comment out the code below :)  */
+class translator {
   constructor(
     sentence /*Will read from the input box each time and keep updating */
   ) {
@@ -104,3 +105,16 @@ export class translator {
       .join("");
   }
 }
+
+const wordBox = document.querySelector(".englishToMorse");
+const morseBox = document.querySelector(".morseToEnglish");
+
+wordBox.addEventListener("input", () => {
+  const words = new translator(wordBox.textContent);
+  morseBox.textContent = words.getToMorse;
+});
+
+morseBox.addEventListener("input", () => {
+  const morseCode = new translator(morseBox.textContent);
+  wordBox.textContent = morseCode.getToAlphabet;
+});
