@@ -95,6 +95,8 @@ export class translator {
       .join(" ");
   }
 
+  /*in order to convert morse code, the input should have a blank space between every morse code in a word, 
+  however spaces between words are represented by the forward /, e.g. '. .. ...' = '123' but '1 / 2 / 3' = '1 2 3' */
   get getToAlphabet() {
     const morseArray = this.sentence.split(" ");
     return morseArray
