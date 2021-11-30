@@ -3,6 +3,7 @@
   font-family: "Roboto", sans-serif;
   margin: 0px;
   padding: 0px;
+  transition-duration: 0.5s;
 }
 
 *::-webkit-scrollbar {
