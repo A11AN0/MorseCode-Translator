@@ -4,17 +4,28 @@
   padding: 0px;
 }
 
+*::-webkit-scrollbar {
+  width: 1px;
+}
+
 body {
   background-image: url("/styles/images/pearl-waves.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  height: max(100vh, 300px);
+  display: flex;
+  flex-direction: column;
+}
+
+.program {
+  height: 95%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
+  overflow-y: hidden;
 }
 
 .tile {
@@ -25,8 +36,8 @@ body {
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: scroll;
+  align-items: baseline;
+  overflow-y: scroll;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -34,19 +45,43 @@ body {
   min-height: 100%;
   max-height: fit-content;
   width: 100%;
-  font-weight: 400;
+  font-weight: 350;
   text-transform: uppercase;
-  font-size: clamp(100%, 5vw, 150%);
+  font-size: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
+.translator:focus {
+  outline-width: 0px;
 }
 
 .englishToMorse {
-  background-color: rgba(2, 234, 178, 0.5);
+  background-color: rgba(2, 234, 178, 0.2);
 }
 
 .morseToEnglish {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 481px) {
+  .translator {
+    font-size: clamp(100%, 5vw, 150%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .program {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .translator {
+    font-size: 1rem;
+  }
 }
