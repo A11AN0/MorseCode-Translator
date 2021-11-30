@@ -1,0 +1,39 @@
+* {
+  font-family: $main-font;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: mediumaquamarine;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.tile {
+  height: 80%;
+  width: 80%;
+  background-color: pink;
+  -webkit-backdrop-filter: blur(50);
+  backdrop-filter: blur(50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.translator {
+  max-width: 70%;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.englishToMorse {
+  background-color: #02eab2;
+}
+
+.morseToEnglish {
+  background-color: #ff0000;
+}
