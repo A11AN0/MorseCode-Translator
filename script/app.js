@@ -42,7 +42,7 @@ export class singleCharacterConverter {
       ".": ".-.-.-",
       "?": "..--..",
       "!": "-.-.--",
-      ",": ".-.-.-",
+      ",": "--..--",
       " ": "/",
     };
   }
@@ -80,7 +80,7 @@ export class singleCharacterConverter {
 }
 
 /* A translator class which will convert a sentence of valid symbols/morse code
-To run jest tests, from this directory just use the command npm test app.test.js :)  */
+To run jest tests, from this directory just use the terminal command 'npm test app.test.js' :)  */
 export class translator {
   constructor(
     sentence /*Will read from the input box each time and keep updating */
