@@ -1,13 +1,13 @@
 # Javascript Morse Code Translator
 
-![Final Desktop UI](styles/images/TranslatorDesktop.png)
 &nbsp;
 
-Hi, this is my vanilla JS morse code translator. It's made using vanilla Javascript, HTML & SCSS via a Object Oriented Test Driven mobile-first approach. Using JEST, I made unit tests for the singleCharacterConverter and translator classes, which I made for conversion of morse code to text and vice versa.
+###### Hi, this is my vanilla JS morse code translator. It's made using vanilla Javascript, HTML & SCSS via a Object Oriented Test Driven mobile-first approach. Using JEST, I made unit tests for the singleCharacterConverter and translator classes, which I made for conversion of morse code to text and vice versa.
 
-<!-- ## Prototype UI design using Figma
+&nbsp;
 
-![Figma Desktop Prototype UI](styles/images/figmaDesktop.jpeg) -->
+![Final Desktop UI](styles/images/TranslatorDesktop.png)
+&nbsp;
 
 ## More about this project
 
@@ -17,8 +17,9 @@ This functionality was applied to entire sentences by the translator class, whic
 
 JEST tests were written and performed on both translator and singleCharacterConverter classes to ensure accurate input validation and accurate translation.
 
--Click [here](https://www.figma.com/file/XyBqK9o6M1hycyFMg7f0Ue/Allan's-Morse-Code-Translator) to see the figma UI prototype.
--There is more info in the JS files :)
+- Click [here](https://www.figma.com/file/XyBqK9o6M1hycyFMg7f0Ue/Allan's-Morse-Code-Translator) to see the figma UI prototype.
+
+- There is more info in the JS files :)
 
 ## Future Improvements & Planned Bug Fixes
 
