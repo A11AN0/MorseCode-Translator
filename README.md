@@ -1,6 +1,6 @@
 # Javascript Morse Code Translator
 
-Hello, this is my vanilla JS morse code translator. It's made using vanilla Javascript, HTML & SCSS via a Object Oriented Test Driven mobile-first approach. Using JEST, I made unit tests for the singleCharacterConverter and translator classes, which I made for conversion of morse code to text and vice versa.
+Hello, this is my vanilla JS morse code translator. It's built with vanilla Javascript, HTML & SCSS via a Object Oriented Test Driven mobile-first approach. Using JEST, I made unit tests for the singleCharacterConverter and translator classes, also made for conversion of morse code to text and back again.
 &nbsp;
 
 ![Final Desktop UI](styles/images/TranslatorDesktop.png)
