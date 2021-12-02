@@ -2,6 +2,7 @@
 
 ![Final Desktop UI](styles/images/TranslatorDesktop.png)
 &nbsp;
+
 Hi, this is my vanilla JS morse code translator. It's made using vanilla Javascript, HTML & SCSS via a Object Oriented Test Driven mobile-first approach. Using JEST, I made unit tests for the singleCharacterConverter and translator classes, which I made for conversion of morse code to text and vice versa.
 
 <!-- ## Prototype UI design using Figma
